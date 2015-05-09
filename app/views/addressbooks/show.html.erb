@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fname:</strong>
+  <%= @addressbook.fname %>
+</p>
+
+<p>
+  <strong>Lname:</strong>
+  <%= @addressbook.lname %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @addressbook.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @addressbook.city %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @addressbook.zipcode %>
+</p>
+
+<p>
+  <strong>Cnumber:</strong>
+  <%= @addressbook.cnumber %>
+</p>
+
+<p>
+  <strong>Eadd:</strong>
+  <%= @addressbook.eadd %>
+</p>
+
+<p>
+  <strong>Pic:</strong>
+  <%= image_tag(@addressbook.picture_url, :width => 600) if @addressbook.picture.present? %>
+</p>
+
+<%= link_to 'Edit', edit_addressbook_path(@addressbook) %> |
+<%= link_to 'Back', addressbooks_path %>

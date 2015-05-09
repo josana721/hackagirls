@@ -1,0 +1,39 @@
+<h1>Listing addressbooks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fname</th>
+      <th>Lname</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>Zipcode</th>
+      <th>Cnumber</th>
+      <th>Eadd</th>
+      <th>Pic</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @addressbooks.each do |addressbook| %>
+      <tr>
+        <td><%= addressbook.fname %></td>
+        <td><%= addressbook.lname %></td>
+        <td><%= addressbook.street %></td>
+        <td><%= addressbook.city %></td>
+        <td><%= addressbook.zipcode %></td>
+        <td><%= addressbook.cnumber %></td>
+        <td><%= addressbook.eadd %></td>
+        <td><%= addressbook.pic %></td>
+        <td><%= link_to 'Show', addressbook %></td>
+        <td><%= link_to 'Edit', edit_addressbook_path(addressbook) %></td>
+        <td><%= link_to 'Destroy', addressbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Addressbook', new_addressbook_path %>
